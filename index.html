@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h2>Apollo Soubvaki</h2>
+        </div>
+        <div class="col s6">
+            <h3>Add new product</h3>
+            <div class="row">
+                <form class="col s12" name="newProductForm">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Placeholder" id="menuName" type="text" class="validate">
+                            <label for="menuName">Menu Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="dishPrice" type="text" class="validate">
+                            <label for="dishPrice">Dish Price</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="dishType">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">Appetizer</option>
+                                <option value="2">Entree</option>
+                                <option value="3">Desert</option>
+                            </select>
+                            <label>Materialize Select</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light" type="submit" name="add-product">
+                                ADD PRODUCT
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col s6">
+            <h3>Current Inventory</h3>
+            <div class="row">
+                <ul id="inventory-contanier" class="collection"></ul>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-light" name="clear-inventory">
+                        CLEAR INVENTORY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bundle.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="./node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+</body>
+</html>
