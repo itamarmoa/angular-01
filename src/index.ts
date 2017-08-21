@@ -1,5 +1,5 @@
 import Product from './Product';
-import Inventory from './Inventory';
+import Inventory from './components/Inventory';
 
 let clearButton = document.querySelector("button[name=clear-inventory]");
 let addButton = document.querySelector("button[name=add-product]");

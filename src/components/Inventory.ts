@@ -1,4 +1,4 @@
-import {saveToLocalStorage,loadFromLocalStorage} from './services/localStorageService';
+import {saveToLocalStorage,loadFromLocalStorage} from '../services/localStorageService';
 
 interface ItemType{
     name: string;
