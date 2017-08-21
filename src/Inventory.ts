@@ -1,3 +1,5 @@
+import {saveToLocalStorage,loadFromLocalStorage} from './services/localStorageService';
+
 interface ItemType{
     name: string;
     price: number;
@@ -7,7 +9,7 @@ interface ItemType{
 class Inventory{
     public items: any[] = [];
     constructor(){
-        let lsItems = this.loadFromLocalStorage();
+        let lsItems = loadFromLocalStorage();
         if(lsItems){
            this.items = lsItems;
            this.printItems();
@@ -26,18 +28,11 @@ class Inventory{
             listItem.innerHTML = `<span class="title"> ${item.name} </span><span class="secondary-content">${item.price}</span>`;
             container.appendChild(listItem);
         } );
-        this.saveToLocalStorage(this.items);
+        saveToLocalStorage(this.items);
     }
     clearAll(){
         this.items = [];
         this.printItems();
-    }
-    saveToLocalStorage(items:any[]){
-        localStorage.setItem("items", JSON.stringify(items));
-    }
-    loadFromLocalStorage(){
-        let items = localStorage.getItem("items");
-        return JSON.parse(items);
     }
 }
 
